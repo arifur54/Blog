@@ -1,0 +1,53 @@
+.login{
+    height: calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.3)),url("https://imagesvc.meredithcorp.io/v3/jumpstartpure/image?url=https://cf-images.us-east-1.prod.boltdns.net/v1/static/6157254766001/f3254ab6-b014-4377-b28e-e2b59db277f3/9477553f-0ddd-4d05-8eeb-33a52362f4e5/1280x720/match/image.jpg&w=1280&h=720&q=90&c=cc");
+    background-size: cover;  
+}
+
+.loginTitle{
+    font-size: 50px;
+}
+
+.loginForm{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForm > label{
+    margin: 10px 0;
+}
+
+.loginInput{
+    padding: 10px;
+    background-color: white;
+    border: none
+}
+
+.loginButton{
+    margin-top: 20px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: lightcoral;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+
+.loginRegisterButton{
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: teal;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+}

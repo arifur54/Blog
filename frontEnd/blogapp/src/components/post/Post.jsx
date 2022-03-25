@@ -1,37 +1,32 @@
 import React from 'react'
-import './post.css'
+import './post.css';
+import {Link } from 'react-router-dom';
 
-export default function Post() {
+export default function Post({post}) {
   return (
     <div className='post'>
+        {post.photo && (
         <img
         className='postImg'
-        src='https://i.cbc.ca/1.5256404.1566499707!/fileImage/httpImage/cat-behaviour.jpg' 
+        src= {post.photo}
         alt='' 
         />
+        )}
         <div className="postInfo">
             <div className="postCats">
-                <span className="postCat">Music</span>
-                <span className="postCat">Life</span>
+                { post.categories.map((cate) => (
+                    <span className='postCat'>{cate.name}</span>
+                ))}
             </div>
-            <span className="postTitle">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-            </span>
+            <Link className="link" to={`/post/${post._id}`}>
+                <span className="postTitle">
+                {post.title}
+                </span>
+            </Link>
             <hr/>
-            <span className="postDate">1 hour ago</span>
+            <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
             <p className='postDesc'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Molestias tempora reiciendis obcaecati officia, fugit odio voluptas minus
-                  commodi rerum deleniti cum nihil maxime itaque? Consequatur quisquam 
-                  maxime est sunt id.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Molestias tempora reiciendis obcaecati officia, fugit odio voluptas minus
-                  commodi rerum deleniti cum nihil maxime itaque? Consequatur quisquam 
-                  maxime est sunt id.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Molestias tempora reiciendis obcaecati officia, fugit odio voluptas minus
-                  commodi rerum deleniti cum nihil maxime itaque? Consequatur quisquam 
-                  maxime est sunt id.
+                {post.desc}
             </p>
         </div>
     </div>

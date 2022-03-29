@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import{
     Routes,
     Route,
 } from "react-router-dom";
+import { Context } from './context/Context';
 
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
@@ -13,8 +14,9 @@ import Write from './pages/write/Write';
 
 
 
-export default function routes() {
-  const user = false;
+export default function Routess() {
+  const {user} = useContext(Context);
+  
 
   return (
     <Routes>
